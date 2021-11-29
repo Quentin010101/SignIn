@@ -1,19 +1,110 @@
-main {
-    background: white;
+
+section{
     padding: 20px 40px;
+    background: white;
 }
 .container-image{
     position: relative;
     display: flex;
     gap: 30px;
     box-shadow: 0.2em 0.2em 0.2em rgba(0,0,0,0.7);
-}
-.container-image img{
+    border: 1px solid rgba(0,0,0,0.3);
 
-    height: 400px;
-    width: 400px;
+    perspective: 800px;
+    overflow: hidden;
 }
-.container-image > div{
+.container-image > div:nth-child(1){
+    transform-style: preserve-3d;
+    height: 400px;
+    min-width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container-image:hover > div:nth-child(1){
+    animation: rot 4s infinite linear 1s;
+}
+@keyframes rot{
+    to{transform: rotateX(360deg) rotateY(360deg)}
+}
+.container-cube{
+    position: relative;
+    width: 100px;
+    height: 100px;
+    transform-style: preserve-3d;
+    position: relative;
+    transform: translateX(-50%) translateY(-50%);
+}
+.container-cube > div {
+    transform-style: preserve-3d;
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    background: rgba(0,0,0,0.3);
+    top: 50%;
+    left: 50%;
+    opacity: 0.8;
+}
+.container-cube > div:nth-child(1) {
+    transform:  rotateX(0deg) translateZ(0px) translateX(100px);
+    transition: transform 1s;
+    background: hsl(100,40%,50%);
+    
+}
+.container-cube > div:nth-child(2) {
+    transform:  rotateX(0deg) translateZ(0px) translateX(-100px);
+    transition: transform 1s;
+    background: hsl(200,40%,50%);
+}
+.container-cube > div:nth-child(3) {
+    transform:  rotateY(0deg) translateZ(0px) translateX(0px) translateY(-100px);
+    transition: transform 1s;
+    background: hsl(150,40%,50%);
+
+}
+.container-cube > div:nth-child(4) {
+    transform:  rotateY(0deg) translateZ(0px) translateX(0px) translateY(100px);
+    transition: transform 1s;
+    background: hsl(50,40%,50%);
+
+}
+.container-cube > div:nth-child(5) {
+    transform:  rotateY(0deg) translateZ(0px) translateX(-100px);
+    transition: transform 1s;
+    background: hsl(300,40%,50%);
+
+}
+.container-cube > div:nth-child(6) {
+    transform:  rotateY(0deg) translateZ(0px) translateX(-100px);
+    transition: transform 1s;
+    background: hsl(350,40%,50%);
+    }
+/* ----------------hover -------------*/
+.container-image:hover .container-cube > div:nth-child(1) {
+    transform:  rotateX(90deg) translateZ(50px);
+    transition: transform 1s;
+}
+.container-image:hover .container-cube > div:nth-child(2) {
+    transform:  rotateX(-90deg) translateZ(50px);
+    transition: transform 1s;
+}
+.container-image:hover .container-cube > div:nth-child(3) {
+    transform:  rotateY(0deg) translateZ(50px);
+    transition: transform 1s;
+}
+.container-image:hover .container-cube > div:nth-child(4) {
+    transform:  rotateY(90deg) translateZ(50px);
+    transition: transform 1s;
+}
+.container-image:hover .container-cube > div:nth-child(5) {
+    transform:  rotateY(180deg) translateZ(50px);
+    transition: transform 1s;
+}
+.container-image:hover .container-cube > div:nth-child(6) {
+    transform:  rotateY(270deg) translateZ(50px);
+    transition: transform 1s;
+}
+.container-image > div:nth-child(2){
     padding: 40px 0;
     font-family: 'Poppins', sans-serif;
 }
@@ -33,19 +124,43 @@ main {
     font-weight: 600;
     box-shadow: 0.2em 0.2em 0.2em rgba(0,0,0,0.7);
 }
-.container-image::before{
+.container-image > div:nth-child(1):before{
     position: absolute;
     content: '';
     background: rgba(0,0,0,0.3);
     height: 100%;
-    width: 400px;
+    width: 100%;
     inset: 0;
     opacity: 1;
     transition: all 1s;
 
 }
-.container-image:hover::before{
+.container-image:hover > div:nth-child(1)::before{
     width: 0%;
     opacity: 0;
     transition: all 0.2s;
+}
+.container-box{
+    display: flex;
+    justify-content: space-evenly;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin: 20px 0;
+}
+.box{
+    height: 300px;
+    aspect-ratio: 1 / 1;
+    background: white;
+    box-shadow: 0.2em 0.2em 0.2em rgba(0,0,0,0.7);
+    border: 1px solid rgba(0,0,0,0.3);
+}
+
+
+@media (max-width: 1000px){
+    .container-image{
+        flex-direction: column;
+    }
+    .container-image > div:nth-child(2){
+        padding: 10px 20px;
+    }
 }

@@ -9,12 +9,12 @@ function createBubulle(){
     bubulle.classList.add('bubulle')
 
     let widthHeight = Math.floor(Math.random()*100 + 50)
-    let numberLeft = Math.floor(Math.random()*100)
+    let numberLeft = Math.floor(Math.random()*90)
     let numberColor = Math.floor(Math.random()*360)
 
-    bubulle.style.cssText += "left: " + numberLeft + "%; height:" + widthHeight + "px; width: " + widthHeight + "px; background-image: radial-gradient(farthest-corner at 25px 25px, hsl(" + numberColor + ", 10%, 50%) 0%, hsl(" + numberColor + ", 10%, 30%) 100%);"
+    bubulle.style.cssText += "left: " + numberLeft + "%; height:" + widthHeight + "px; width: " + widthHeight + "px; background-image: radial-gradient(farthest-corner at 25px 25px, hsl(" + numberColor + ", 40%, 90%) 0%, hsl(" + numberColor + ", 40%, 50%) 100%);"
     setTimeout(()=>{
-        bubulle.style.cssText += "transform: translateY(700px); transition: transform 20s;"
+        bubulle.style.cssText += "transform: translateY(900px); transition: transform 20s;"
     },100)
     backg.appendChild(bubulle)
     setTimeout(() => {
