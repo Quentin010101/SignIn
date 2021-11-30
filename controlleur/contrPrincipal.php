@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,7 +16,7 @@
 <body>
 
 <div class="backgroundHeader">
-        <h1>Concepteur Application</h1>
+        <h1>Application Concepter</h1>
         <h3>Lorem, ipsum dolor.</h3>
 </div>
 <header>
@@ -23,14 +25,18 @@
     </div>
     <nav>
         <ul>
-            <li><a href="">Acceuil</a></li>
+            <li><a href="">Home</a></li>
             <li><a href="">ToDo List</a></li>
-            <li><a href="">Galerie Image</a></li>
+            <li><a href="">Gallery</a></li>
         </ul>
     </nav>
     <div class="login">
-        <button class="loginConnexion">Se Connecter</button>
+        <a class="loginConnexion" href="../controlleur/contrSign.php?action=signIn">Log In</a>
     </div>
 </header>
 
 <script src="../public/js/background.js"></script>
+
+<?php
+require('./view/acceuil.php');
+require('./view/footer.php');

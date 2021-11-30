@@ -1,0 +1,149 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+main{
+    display: flex;
+    height: 100vh;
+}
+.container-form{
+    min-width: 35%;
+    position: relative;
+}
+.titre a{
+    font-size: 30px;
+    font-family: 'Zen Kurenaido', sans-serif;
+    cursor: pointer;
+    color: black;
+    text-decoration: none;
+    font-weight: 700;
+}
+.titre{
+    margin: 40px 40px;
+}
+.container-vue{
+    width: 65%;
+    background-image: url('../asset/db84129b6b_50146620_smartphone-application.jpg');
+    background-position-x: center;
+    background-size: cover;
+}
+
+.container-form form{
+    position: absolute;
+    top: 110px;
+    left: 100%;
+    transform: translateX(-50%);
+    background-color: white;
+    font-family: 'Poppins', sans-serif;
+    width: 100%;
+    min-width: 320px;
+    border-radius: 5px;
+    box-shadow: 0.3em 0.3em 0.2em rgba(0, 0, 0, 0.5);
+}
+#form1{
+    top: 50%;
+    left: 100%;
+    transform: translateY(-50%) translateX(-50%);
+    display: flex;
+    flex-direction: column;
+}
+#form1 a{
+    margin: 0 0 40px 40px;
+    text-decoration: none;
+    color:rgba(0, 0, 0, 0.7);
+    transition: all 0.6s;
+}
+#form1 a:hover{
+    color:rgba(0, 0, 0, 0.9);
+    text-shadow: 0.1em 0.1em 0.2em rgba(0, 0, 0, 0.3);
+    transition: all 0.6s;
+}
+.container-form form > div{
+    display: flex;
+    flex-direction: column;
+}
+form h2{
+    margin: 40px;
+}
+form p{
+    height: 2vh;
+}
+
+form div{
+    padding: 8px 40px;
+}
+form > div label{
+    transition: all 0.5s;
+}
+form > div:hover label{
+    letter-spacing: 1px;
+    transition: all 0.5s;
+}
+form p{
+    font-size: 0.8em;
+    color: rgba(255, 0, 0,0.7);
+    font-style: italic;
+}
+form input[type='text'], form input[type='email'], form input[type='password']{
+    height: 35px;
+    border-radius: 5px;
+    border: 1px gray solid;
+    padding-left: 20px;
+    transition: all 0.5s; 
+}
+form input[type='text']:hover, form input[type='email']:hover, form input[type='password']:hover{
+    background: rgba(0, 0, 0, 0.1);
+    box-shadow: 0.1em 0.1em  rgba(0, 0, 0, 0.7),
+                inset 0.1em 0.1em rgba(0, 0, 0, 0.7);
+    transition: all 0.5s; 
+}
+form input[type='submit']{
+    border: solid 2px;
+    background: transparent;
+    color: rgb(0, 0, 0);
+    font-size: 1.1em;
+    padding: 0.5em 0.6em;
+    border-radius: 0.5em;
+    cursor: pointer;
+    transition: all 0.5s;
+    width: 100px;
+    margin: 0 0 40px 40px;
+}
+form input[type='submit']:hover{
+    background: rgba(0, 0, 0, 0.1);
+    box-shadow: 0.1em 0.1em  rgba(0, 0, 0, 0.7),
+                inset 0.1em 0.1em rgba(0, 0, 0, 0.7);
+    transition: all 0.5s;            
+}
+.valid{
+    border: 2px green solid  !important;
+}
+.nonValid{
+    border: 2px red solid !important;
+}
+
+@media (max-width: 1100px){
+    .container-vue{
+        display: none;
+    }
+    .container-form{
+        min-width: 100%;
+    }
+    #form{
+        position: relative;
+        top: 0;
+        left: 0;
+        transform: none;
+        width: 80%;
+        margin: auto;
+    }
+    #form1{
+        position: relative;
+        top: 0;
+        left: 0;
+        transform: none;
+        width: 80%;
+        margin: auto;  
+    }
+}

@@ -29,13 +29,19 @@ nav li{
     list-style: none;
     padding: 0 20px;
 }
-nav a{
+header a{
     height: inherit;
     display: flex;
     align-items: center;
     text-decoration: none;
-    color: white;
+    color: rgba(255,255,255,0.9);
     font-size: 1.1em;
+    transition: color 0.5s;
+
+}
+nav a:hover{
+    color: white;
+    transition: color 0.5s;
 }
 .loginConnexion{
     border: solid;
@@ -45,7 +51,13 @@ nav a{
     padding: 0.7em 1em;
     border-radius: 0.5em;
     cursor: pointer;
-    
+    transition: all 0.5s;
+}
+.loginConnexion:hover{
+    background: rgba(255,255,255,0.1);
+    box-shadow: 0.1em 0.1em  rgba(255,255,255,0.7),
+                inset 0.1em 0.1em rgba(255,255,255,0.7);
+    transition: all 0.5s;            
 }
 
 /* //--------Background Header-------- */
@@ -53,7 +65,7 @@ nav a{
     z-index: -1;
     position: relative;
     height: 350px;
-    background: radial-gradient(farthest-corner at 20% 40%, rgb(204, 204, 204) 0%, rgba(0, 0, 0, 0.8) 100%);
+    /* background: radial-gradient(farthest-corner at 20% 40%, rgb(204, 204, 204) 0%, rgba(0, 0, 0, 0.8) 100%); */
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -63,7 +75,6 @@ nav a{
     margin-left: 100px;
     z-index: 1;
     color: rgba(0,0,0,0.9);
-    color: white;
 }
 .backgroundHeader h1{
     font-size: 3.5em;

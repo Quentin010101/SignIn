@@ -12,7 +12,7 @@ function createBubulle(){
     let numberLeft = Math.floor(Math.random()*90)
     let numberColor = Math.floor(Math.random()*360)
 
-    bubulle.style.cssText += "left: " + numberLeft + "%; height:" + widthHeight + "px; width: " + widthHeight + "px; background-image: radial-gradient(farthest-corner at 25px 25px, hsl(" + numberColor + ", 40%, 90%) 0%, hsl(" + numberColor + ", 40%, 50%) 100%);"
+    bubulle.style.cssText += "left: " + numberLeft + "%; height:" + widthHeight + "px; width: " + widthHeight + "px; background-image: radial-gradient(farthest-corner at " + widthHeight/3 + "px " + widthHeight/3 + "px, hsl(" + numberColor + ", 40%, 95%) 0%, hsl(" + numberColor + ", 40%, 50%) 100%);"
     setTimeout(()=>{
         bubulle.style.cssText += "transform: translateY(900px); transition: transform 20s;"
     },100)

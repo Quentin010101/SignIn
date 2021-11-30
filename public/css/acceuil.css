@@ -7,7 +7,7 @@ section{
     position: relative;
     display: flex;
     gap: 30px;
-    box-shadow: 0.2em 0.2em 0.2em rgba(0,0,0,0.7);
+    box-shadow: 0.2em 0.2em 0.2em rgba(139, 108, 108, 0.7);
     border: 1px solid rgba(0,0,0,0.3);
 
     perspective: 800px;
