@@ -1,3 +1,5 @@
+<?php $title = 'Home'; ?>
+
 <main>
     <section id="first-section">
 
@@ -43,9 +45,8 @@
             </div>
         </div>
     </section>
-    
 </main>
-  
 
+<?php $content = ob_get_clean(); ?>
 
-
+<?php require('templatePrincipale.php'); ?>

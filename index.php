@@ -1,31 +1,38 @@
 <?php
-
-require('./controlleur/contrSign.php')
-
-
-if(isset($_POST['name']) && isset($_POST['surname']) && isset($_POST['email']) && isset($_POST['password'])){
-    signUp();
-    require('./controlleur/contrPrincipal.php');
-}
-if(isset($_POST['email1']) && isset($_POST['password1'])){
-    signIn();
-    require('./controlleur/contrPrincipal.php');
-}
+session_start();
 
 
-
-if (isset($_GET['action'])) {
-    if (!empty($_GET['action'])) {
-        if ($_GET['action'] == 'signIn') {
-            require('../view/signIn.php');
-        } else if ($_GET['action'] == 'signUp') {
-            require('../view/signUp.php');
-        } else {
-            header('location: ../index.php');
+try {
+    
+    if (isset($_GET['action'])) {
+        if ($_GET['action'] == 'disco') {
+            session_destroy();
+            header('location: ./index.php');
         }
-    } else {
-        header('location: ../index.php');
+        elseif($_GET['action'] == 'toDo'){
+            require('./controlleur/contrPrincipal.php');
+            toDo();
+        }
+        else{
+            exit;
+        }
+    } elseif (isset($_POST['name']) && isset($_POST['surname']) && isset($_POST['email']) && isset($_POST['password'])) {
+        require('./controlleur/contrSign.php');
+        signUp();
+    } elseif (isset($_POST['email1']) && isset($_POST['password1'])) {
+        require('./controlleur/contrSign.php');
+        signIn();
+    } elseif(isset($_POST['post'])){
+        require('./controlleur/contrPrincipal.php');
+        newPost();
+    } 
+    else{
+        require('./controlleur/contrPrincipal.php');
+        start();
     }
-} else {
-    header('location: ../index.php');
+
+}
+catch(Exception $e)
+{
+    echo 'Erreur : ' . $e->getMessage();
 }
