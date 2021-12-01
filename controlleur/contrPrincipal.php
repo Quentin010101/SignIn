@@ -6,9 +6,11 @@ function start(){
 }
 
 function toDo(){
-    require('./modele/modelePost.php');
-    $newComment = new Post();
-    $post = $newComment->getPost();
+    if(isset($_SESSION['name'])){
+        require('./modele/modelePost.php');
+        $newComment = new Post();
+        $post = $newComment->getPost();
+    }
     require('./view/toDo.php');
 }
 
@@ -21,4 +23,14 @@ function newPost(){
         header('location: ../index.php?action=toDo');
     }
 
+}
+
+function deletePost(){
+    if(isset($_GET['delete'])){
+        $postToDelete = $_GET['delete'];
+        require('./modele/modelePost.php');
+        $newComment = new Post();
+        $newComment->deletePost($postToDelete);
+        header('location: ../index.php?action=toDo');
+    }
 }

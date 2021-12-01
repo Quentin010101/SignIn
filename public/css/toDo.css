@@ -1,10 +1,92 @@
-main{
+#maintodo{
     background: rgb(255, 255, 255);
     height: 100%;
     width: 100%;
     font-family: 'Poppins', sans-serif;
-}
-.container-toDo{
     padding: 80px 40px;
 
+}
+.container-toDo{
+    box-shadow: 0.2em 0.2em 0.2em rgba(0, 0, 0, 0.4);
+    padding: 5px 0px 40px 0px;
+
+}
+.container-toDo p{
+    font-weight: 700;
+    font-size: 1.1em;
+    font-family: 'Zen Kurenaido', sans-serif;
+}
+.container-toDo .erreur{
+    color: rgba(255,0,0,0.8);
+}
+.container-toDo h3{
+    display: flex;
+    align-items: center;
+    background:rgba(0, 0, 0,0.8);
+    height: 55px;
+    color: white;
+    padding-left: 20px;
+    margin-bottom: 50px;
+}
+.container-toDo input[type='text']{
+    width: 80%;
+    height: 50px;
+    padding-left: 20px;
+    border-radius: 5px;
+    border: solid 2px rgba(0, 0, 0, 0.4);
+    transition: border 0.4s;
+}
+.container-toDo input[type='text']:focus{
+    border: 2px solid rgba(0, 0, 0,0.8);
+    outline: none;
+    transition: border 0.4s;
+}
+.container-toDo label{
+    margin: 0 20px;
+    font-size: 1.1em;
+}
+.container-toDo input[type='submit']{
+    height: 50px;
+    width: 100px;
+    border: solid 2px;
+    background: transparent;
+    color: rgb(0, 0, 0);
+    font-size: 1.1em;
+    border-radius: 0.5em;
+    cursor: pointer;
+    transition: all 0.5s;
+    margin-left: 20px;
+}
+.container-toDo input[type='submit']:hover{
+    background: rgba(0, 0, 0, 0.1);
+    box-shadow: 0.1em 0.1em  rgba(0, 0, 0, 0.7),
+                inset 0.1em 0.1em rgba(0, 0, 0, 0.7);
+    transition: all 0.5s;            
+}
+.container-toDo .newPost{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 40px 20px 40px;
+}
+.newPost a{
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.7);
+    padding: 0.4em 0.7em;
+    border: solid 1px;
+    border-radius: 10px;
+    transition: all 0.4s;
+}
+.newPost a:hover{
+    background: rgba(0, 0, 0, 0.1);
+    color: rgba(0, 0, 0, 0.9);
+    transition: all 0.4s;
+}
+@media (max-width: 1000px){
+    .container-toDo form{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }   
 }

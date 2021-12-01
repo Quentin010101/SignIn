@@ -1,6 +1,6 @@
 <?php $title = 'Home'; ?>
 
-<main>
+<main id="accueil">
     <section id="first-section">
 
     </section>

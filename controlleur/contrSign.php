@@ -13,8 +13,11 @@ function signIn()
                 
                 $newUser = new User();
                 $request = $newUser->getUser($email);
-
-                if (password_verify($password, $request['password'])) {
+                if(!$request){
+                    $erreur = "user not found";
+                    require('./view/erreur.php');
+                }
+                elseif (password_verify($password, $request['password'])) {
                     $_SESSION['name'] = $request['name'];
                     $_SESSION['id'] = $request['id'];
                     require('./view/acceuil.php');

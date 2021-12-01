@@ -1,4 +1,6 @@
-
+main{
+    background-color: white;
+}
 section{
     padding: 20px 40px;
     background: white;
@@ -40,69 +42,74 @@ section{
     position: absolute;
     height: 100px;
     width: 100px;
+    border-radius: 50%;
     background: rgba(0,0,0,0.3);
     top: 50%;
     left: 50%;
     opacity: 0.8;
 }
+
 .container-cube > div:nth-child(1) {
-    transform:  rotateX(0deg) translateZ(0px) translateX(100px);
-    transition: transform 1s;
+    transform:  rotateX(0deg) translateZ(0px) translateX(-100px);
     background: hsl(100,40%,50%);
-    
+    transition: all 1s;
 }
 .container-cube > div:nth-child(2) {
-    transform:  rotateX(0deg) translateZ(0px) translateX(-100px);
-    transition: transform 1s;
+    transform:  rotateX(0deg) translateZ(0px) translateX(-100px) translateY(-100px);
     background: hsl(200,40%,50%);
+    transition: all 1s;
 }
 .container-cube > div:nth-child(3) {
-    transform:  rotateY(0deg) translateZ(0px) translateX(0px) translateY(-100px);
-    transition: transform 1s;
+    transform:  rotateY(0deg) translateZ(0px) translateX(100px) translateY(-100px);
     background: hsl(150,40%,50%);
-
+    transition: all 1s;
 }
 .container-cube > div:nth-child(4) {
     transform:  rotateY(0deg) translateZ(0px) translateX(0px) translateY(100px);
-    transition: transform 1s;
     background: hsl(50,40%,50%);
-
+    transition: all 1s;
 }
 .container-cube > div:nth-child(5) {
-    transform:  rotateY(0deg) translateZ(0px) translateX(-100px);
-    transition: transform 1s;
+    transform:  rotateY(0deg) translateZ(0px) translateX(-100px) translateY(100px);
     background: hsl(300,40%,50%);
-
+    transition: all 1s;
 }
 .container-cube > div:nth-child(6) {
-    transform:  rotateY(0deg) translateZ(0px) translateX(-100px);
-    transition: transform 1s;
+    transform:  rotateY(0deg) translateZ(0px) translateX(0px);
     background: hsl(350,40%,50%);
+    transition: all 1s;
+
     }
 /* ----------------hover -------------*/
 .container-image:hover .container-cube > div:nth-child(1) {
     transform:  rotateX(90deg) translateZ(50px);
-    transition: transform 1s;
+    border-radius: 0%;
+    transition: all 1s;
 }
 .container-image:hover .container-cube > div:nth-child(2) {
     transform:  rotateX(-90deg) translateZ(50px);
-    transition: transform 1s;
+    border-radius: 0%;
+    transition: all 1s;
 }
 .container-image:hover .container-cube > div:nth-child(3) {
     transform:  rotateY(0deg) translateZ(50px);
-    transition: transform 1s;
+    border-radius: 0%;
+    transition: all 1s;
 }
 .container-image:hover .container-cube > div:nth-child(4) {
     transform:  rotateY(90deg) translateZ(50px);
-    transition: transform 1s;
+    border-radius: 0%;
+    transition: all 1s;
 }
 .container-image:hover .container-cube > div:nth-child(5) {
     transform:  rotateY(180deg) translateZ(50px);
-    transition: transform 1s;
+    border-radius: 0%;
+    transition: all 1s;
 }
 .container-image:hover .container-cube > div:nth-child(6) {
     transform:  rotateY(270deg) translateZ(50px);
-    transition: transform 1s;
+    border-radius: 0%;
+    transition: all 1s;
 }
 .container-image > div:nth-child(2){
     padding: 40px 0;
@@ -123,22 +130,6 @@ section{
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
     box-shadow: 0.2em 0.2em 0.2em rgba(0,0,0,0.7);
-}
-.container-image > div:nth-child(1):before{
-    position: absolute;
-    content: '';
-    background: rgba(0,0,0,0.3);
-    height: 100%;
-    width: 100%;
-    inset: 0;
-    opacity: 1;
-    transition: all 1s;
-
-}
-.container-image:hover > div:nth-child(1)::before{
-    width: 0%;
-    opacity: 0;
-    transition: all 0.2s;
 }
 .container-box{
     display: flex;
@@ -162,5 +153,17 @@ section{
     }
     .container-image > div:nth-child(2){
         padding: 10px 20px;
+    }
+
+}
+@media (max-width: 600px){
+    section{
+        padding: 20px 0px;
+    }
+    #accueil{
+        padding: 20px 5px;
+    }
+    header li{
+        padding: 0 10px;
     }
 }

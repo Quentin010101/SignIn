@@ -26,6 +26,10 @@ try {
         require('./controlleur/contrPrincipal.php');
         newPost();
     } 
+    elseif (isset($_GET['delete'])){
+        require('./controlleur/contrPrincipal.php');
+        deletePost();
+    }
     else{
         require('./controlleur/contrPrincipal.php');
         start();

@@ -3,7 +3,9 @@
     margin: 0;
     box-sizing: border-box;
 }
-
+body{
+    overflow-x: hidden;
+}
 header{
     position: sticky;
     top: 0;
@@ -78,7 +80,7 @@ nav a:hover{
 .backgroundHeader{
     z-index: -1;
     position: relative;
-    height: 350px;
+    height: 300px;
     /* background: radial-gradient(farthest-corner at 20% 40%, rgb(204, 204, 204) 0%, rgba(0, 0, 0, 0.8) 100%); */
     display: flex;
     flex-direction: column;
@@ -115,4 +117,28 @@ nav a:hover{
     width: 10px;
     height: 10px;
     z-index: -1;
+}
+@media (max-width: 1000px){
+    body{
+        font-size: 0.9em;
+    }
+    .backgroundHeader{
+        font-size: 0.9em;
+        height: 250px;
+    }
+    header{
+        height: 65px;
+    }
+}
+@media (max-width: 600px){
+    body{
+        font-size: 0.8em;
+    }
+    .backgroundHeader{
+        font-size: 0.8em;
+        height: 200px;
+    }
+    header{
+        height: 55px;
+    }
 }

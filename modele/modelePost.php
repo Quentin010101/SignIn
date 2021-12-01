@@ -11,11 +11,19 @@ class Post extends Db{
     }
 
     public function getPost(){
-        $query = 'SELECT usercomment FROM post WHERE userid = ?';
+        $query = 'SELECT * FROM post WHERE userid = ?';
         $stmt = $this->connection()->prepare($query);
         $stmt->execute([$_SESSION['id']]);
 
 
         return $stmt;
+    }
+
+    public function deletePost($postid){
+
+        $query = 'DELETE FROM post WHERE postid = ?';
+        $stmt = $this->connection()->prepare($query);
+        $req = $stmt->execute([$postid]);
+
     }
 }
